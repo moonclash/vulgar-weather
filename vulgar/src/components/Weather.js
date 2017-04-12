@@ -6,7 +6,7 @@ class Weather extends React.Component {
     super();
     this.state = {
       temperature: 555,
-      caption: 'Cold as hell',
+      caption: 'Hot as FUCK up in this bitch',
       city: 'London'
     }
   }
@@ -20,11 +20,11 @@ class Weather extends React.Component {
     }));
   }
 
-  
-
   render() {
     const { temperature, caption, city } = this.state;
-    return (<City temperature={temperature} caption={caption} city={city}/>);
+    return (<div className='weather-wrap'>
+          <City className='cold' temperature={temperature} caption={caption} city={city}/>
+    </div>);
   }
 }
 

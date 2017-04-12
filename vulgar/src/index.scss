@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500,900');
+
+$main-font: 'Roboto';
+$blue-cold: #1A237E;
+$orange-hot: #FF6F00;
+$grey-cloudy: #616161;
+$grey-cloudy-text: #F5F5F5;
+$white-500: #FAFAFA;
+$font-size-large: 10vw;
+
+h1, h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: $font-size-large;
+}
+
+body,html,#root, .weather-wrap {
+  font-family: $main-font;
+  margin: 0;
+  height: 100%;
+}
+
+.city {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.cold {
+  background: $blue-cold;
+  color: $white-500;
+}
+
+.hot {
+  background: $orange-hot;
+  color: $white-500;
+}
+
+.cloudy {
+  background: $grey-cloudy;
+  color: $grey-cloudy-text;
+}

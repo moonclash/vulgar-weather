@@ -1,5 +1,30 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Roboto:500,900");
+h1, h3 {
+  margin: 0; }
+
+h1 {
+  font-size: 10vw; }
+
+body, html, #root, .weather-wrap {
+  font-family: "Roboto";
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+  height: 100%; }
+
+.city {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center; }
+
+.cold {
+  background: #1A237E;
+  color: #FAFAFA; }
+
+.hot {
+  background: #FF6F00;
+  color: #FAFAFA; }
+
+.cloudy {
+  background: #616161;
+  color: #F5F5F5; }
