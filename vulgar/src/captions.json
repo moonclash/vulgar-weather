@@ -3,12 +3,31 @@
     "It's hot as FUCK up in this bitch",
     "Feels like Judgement Day",
     "Use deodorant before public transport",
-    "Fucking blazing out there"
+    "Fucking blazing out there",
+    "Tell your bitch its time to Netflix and Chill, it's hot as a motherfucker!"
   ],
   "cold":[
     "Freeze you later, bitch!",
     "Mr Freeze all up in this bitch",
     "Do you want to build a fucking snowman?",
     "Feels like fucking ice age"
-  ]
+  ],
+  "regular":[
+    "Nothing exciting out there",
+    "Weather outside is as interesting as your personal life",
+    "Can you not have a look outside?",
+    "Go bother someone else. It's fine outside."
+  ],
+  "specifics": {
+    "cloudy":[
+      "It's cloudy as a motherfucker!",
+      "Fucking cloudy with a chance of shitty rain",
+      "Clouds fatter than your ex"
+    ],
+    "rainy":[
+      "I'm singing in the fucking rain",
+      "Take a walk in the rain like a romantic bitch",
+      "Free shower outside. You need it. Bitch."
+    ]
+  }
 }
