@@ -5,6 +5,7 @@ $blue-cold: #1A237E;
 $orange-hot: #FF6F00;
 $grey-cloudy: #616161;
 $grey-cloudy-text: #F5F5F5;
+$green-normal: #69F0AE;
 $white-500: #FAFAFA;
 $font-size-large: 10vw;
 
@@ -43,4 +44,9 @@ body,html,#root, .weather-wrap {
 .cloudy {
   background: $grey-cloudy;
   color: $grey-cloudy-text;
+}
+
+.normal {
+  background: $green-normal;
+  
 }

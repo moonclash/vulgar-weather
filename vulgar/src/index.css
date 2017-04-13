@@ -28,3 +28,6 @@ body, html, #root, .weather-wrap {
 .cloudy {
   background: #616161;
   color: #F5F5F5; }
+
+.normal {
+  background: #69F0AE; }
