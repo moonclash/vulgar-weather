@@ -1,5 +1,7 @@
 import React from 'react';
 import City from './City';
+import myData from './../captions.json';
+import { getRandomInt, celsiusConverter, classRenderer } from '../helpers';
 
 class Weather extends React.Component {
   constructor() {
@@ -8,24 +10,20 @@ class Weather extends React.Component {
     this.updateCity = this.updateCity.bind(this);
     this.state = {
       temperature: 555,
-      caption: 'Hot as FUCK up in this bitch',
+      caption: 'Type in a location. Bitch',
       city: 'London',
-      details: 0
+      status: 'normal'
     }
   }
 
   componentWillMount() {
-    const endpoint = 'http://api.openweathermap.org/data/2.5/weather?q=sofia&APPID=69ab23910c547dc0a33092048136adde';
+    const endpoint = 'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=69ab23910c547dc0a33092048136adde';
     fetch(endpoint).then(blob => blob.json().then(data => {
       this.setState({city: data.name,
-                     temperature: data.main.temp,
-                     details: data.clouds.all         
+                     temperature: celsiusConverter(data.main.temp),
+                     status: classRenderer(data.main.temp),                         
       });
     }));
-  }
-
-  componentWillUpdate() {
-    console.log(this.state);
   }
 
   updateCity() {
@@ -38,22 +36,26 @@ class Weather extends React.Component {
     const {city} = this.state;
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=69ab23910c547dc0a33092048136adde`)
           .then(blob => blob.json().then(data => {
+            const { temp } = data.main;
+            const captions = myData[classRenderer(temp)];
+            const arrLength = captions.length - 1;
             this.setState({
               city: data.name,
-              temperature: data.main.temp,
-              details: data.clouds.all
+              temperature: celsiusConverter(temp),
+              status: classRenderer(temp),
+              caption: captions[getRandomInt(0,arrLength)]
             });
           }));
   }
 
   render() {
-    const { temperature, caption, city } = this.state;
+    const { temperature, caption, city, status } = this.state;
     return (<div className='weather-wrap'>
           <form onSubmit={this.updateWeather}>
             <input onChange={this.updateCity} type="text" ref={(input => this.currentCity = input)}/>
             <button>get it!</button>
           </form>
-          <City className='cold' temperature={temperature} caption={caption} city={city}/>
+          <City weatherClass={status} className='cold' temperature={temperature} caption={caption} city={city}/>
     </div>);
   }
 }

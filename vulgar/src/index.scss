@@ -15,6 +15,7 @@ h1, h3 {
 
 h1 {
   font-size: $font-size-large;
+  padding: 0 25px;
 }
 
 body,html,#root, .weather-wrap {
@@ -29,6 +30,36 @@ body,html,#root, .weather-wrap {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  transition: 500ms all ease-in-out;
+
+ 
+
+  span {
+    font-size: 2vw;
+    &:after {
+      content: "°C";
+    }
+  }
+
+  h3 {
+    font-size: 2vw;
+    padding: 50px 0;
+  }
+
+   @media all and(max-width: 700px) {
+    h1 {
+      font-size: 13vw;
+      padding: 0 5px;
+    }
+
+    span {
+      font-size: 6vw;
+    }
+
+    h3 {
+      font-size: 6vw;
+    }
+  }
 }
 
 .cold {
@@ -49,4 +80,25 @@ body,html,#root, .weather-wrap {
 .normal {
   background: $green-normal;
   
+}
+form {
+  position: fixed;
+  padding: 15px;
+
+  input,button {
+    padding: 10px 15px;
+    border: none;
+
+    &:focus {
+      outline: none;
+      font-family: 'Roboto';
+    }
+  }
+
+  button {
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
 }
