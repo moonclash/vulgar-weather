@@ -17,7 +17,7 @@ class Weather extends React.Component {
   }
 
   componentWillMount() {
-    const endpoint = 'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=69ab23910c547dc0a33092048136adde';
+    const endpoint = 'https://api.openweathermap.org/data/2.5/weather?q=$London&APPID=8cda5f89961265d4acfc1573f33bff41';
     fetch(endpoint).then(blob => blob.json().then(data => {
       this.setState({city: data.name,
                      temperature: celsiusConverter(data.main.temp),
@@ -34,7 +34,7 @@ class Weather extends React.Component {
   updateWeather(e) {
     e.preventDefault();
     const {city} = this.state;
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=69ab23910c547dc0a33092048136adde`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=8cda5f89961265d4acfc1573f33bff41`)
           .then(blob => blob.json().then(data => {
             const { temp } = data.main;
             const captions = myData[classRenderer(temp)];
